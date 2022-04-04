@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Contacto</title>
+    <style>
+        #foot {
+            margin-bottom: 50 px;
+        }
+
+        section p {
+            display: block;
+        }
+
+        #butt,
+        #select1 {
+            color: black;
+            background-color: rgba(255, 255, 255, 0.452);
+            font-family: 'Brush Script MT';
+            font-size: 25px;
+            padding: 15px;
+            display: block;
+            text-align: center;
+            margin: auto;
+        }
+
+        #formfield {
+            display: block;
+            margin: 0;
+            font-family: 'Brush Script MT';
+            color: white;
+        }
+
+        form {
+            padding-bottom: 20px;
+            margin: 0;
+        }
+
+        .pictures {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 900px;
+        }
+
+        section h1 {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+
+        .inline {
+            display: inline-block !important;
+            padding: 0 50px;
+            color: white;
+        }
+
+        fieldset {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.808);
+            border-radius: 50px;
+            margin-top: 50px;
+        }
+
+        span {
+            font-size: 50px;
+            font-family: 'Brush Script MT';
+            color:  white;
+            text-align: center;
+        }
+        input{
+            font-family: 'Neucha', cursive;
+            font-size: 25px;
+        }
+        textarea{
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+    <link rel="icon" href="img/icon.png">
+</head>
+
+<body>
+    <header>
+        <p id="logo">
+            Pointé
+        </p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="app.html">Nuestra App</a></li>
+                <li><a href="producto.html">Nuestro Producto</a></li>
+                <li><a href="conexion.html">Conexion Suprema</a></li>
+                <li><a href="planes.html">Planes de contratación</a></li>
+                <li id="fin"><a href="contacto.html">Estadisticas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <form action="" method="">
+            <fieldset>
+                <span>Informacion General</span>
+                <br>
+                <p class="inline">
+                    <label for="Namae" id="formfield">Nombre:</label>
+                    <input id="name" type="text" name="name" value="">
+                </p>
+                <p class="inline">
+                    <label for="Emairu" id="formfield">Correo Electronico:</label>
+                    <input id="email" type="text" name="email" value="">
+                </p>
+                <p class="inline">
+                    <label for="Tlphon" id="formfield">Telefono:</label>
+                    <input type="text" name="Telephone" id="tlphone" value="">
+                </p>
+                <p class="inline">
+                    <textarea id="message" name="Message" rows="8" cols="50"></textarea>
+                </p>
+                <div style="margin: auto; text-align: center;">
+                    <p style="text-align: center;">
+                        <label for="Motive" id="formfield">Motivo</label>
+                        <select name="Select1" id="select1" style="margin: auto;">
+                            <option value="null">Selecciona...</option>
+                            <option value="Sugerencia">Sugerencia</option>
+                            <option value="Sugerencia">Problema</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </p>
+                </div>
+                <button type="button" onclick="GuardarAnswers()" name="Send" id="butt">Enviar</button>
+            </fieldset>
+        </form>
+    </section>
+    <footer>
+        <p>
+            Pointe 2022 version 1.0
+            <br/>
+            Todos los derechos reservados ©
+            <br>
+            <a href="../eng/contact.html">English Website</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
