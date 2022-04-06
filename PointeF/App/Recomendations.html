@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Daily Report</title>
+        <script src="menu.js"></script>
+        <script>
+            function video(op){
+                switch(op)
+                {
+                    case('1'):
+                        let str1 = '<iframe width="360" height="215" src="https://www.youtube.com/embed/ssT1nnmd7ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        let play1= document.getElementById("v1");
+                        play1.innerHTML = str1;
+                    break;
+
+                    case('2'):
+                        let str2 = '<iframe width="360" height="215" src="https://www.youtube.com/embed/1G1ueQacvKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        let play2= document.getElementById("v2");
+                        play2.innerHTML = str2;
+                    break;
+
+                    case('3'):
+                        let str3 = '<iframe width="360" height="215" src="https://www.youtube.com/embed/rYDcVQ0E0Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        let play3= document.getElementById("v3");
+                        play3.innerHTML = str3;
+                    break;
+                }
+
+            }
+        </script>
+        <style>
+            body{
+                background-image: url('https://www.borderlain.it/wp-content/uploads/2020/03/adult-1850184_960_720.jpg');
+                color: white;
+            }
+            .description{
+                color: rgb(175, 175, 175);
+            }
+            footer{
+                text-align: center;
+                margin-top: 100px;
+            }
+
+            .videos{
+                width: 300px;
+                height: 300px;
+            }
+
+            .videos:hover{
+                cursor: pointer;
+            }
+
+            div{
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button type="button" onclick="menu('')" id="boton1" style="display:block"><img src="Icons/Menu.png"> </button>
+        <button type="button" onclick="menucerrar('')" id="boton2" style="display:none"><img src="Icons/Menu.png"></button>
+        <div class="navbar" id="hola" style="display: none">
+            <table>
+            <tr><td> <a href="Daily_report.html"><img src="Icons/Daily.png"><br>Daily report</a></td></tr>
+            <tr><td><a href="Recomendations.html"><img src="Icons/Recomendation.png"><br>Tips</a></td></tr>
+            <tr><td><a href="General_report.html"><img src="Icons/Report.png"><br>General report</a></td></tr>
+            <tr><td> <a href="agenda.html"><img src="Icons/Calendar.png"><br>Schedule</span></a></td></tr>
+            </table> 
+        </div>
+        <header>
+            <h2>Recomendations</h2>
+        </header>
+        <section>
+            <p class="description">
+                Strengthening the muscles around your knee will make it more stable. Your doctor may recommend physical therapy or different types of strengthening exercises based on the specific condition that is causing your pain.
+                <br>
+                If you are physically active or practice a sport, you may need exercises to correct movement patterns that may be affecting your knees and to establish good technique during your sport or activity. Exercises to improve your flexibility and balance also are important.
+                <br>
+                Arch supports, sometimes with wedges on one side of the heel, can help shift pressure away from the side of the knee most affected by osteoarthritis. In certain conditions, different types of braces may be used to help protect and support the knee joint.
+
+            </p> 
+            
+        </section>
+        <footer>
+            <div id="v1">
+                <img src="https://ucontinental.edu.pe/impactopositivo/wp-content/uploads/2018/02/video-play-icon.png" class="videos" onclick="video('1');">
+            </div>
+            <div id="v2">
+                <img src="https://ucontinental.edu.pe/impactopositivo/wp-content/uploads/2018/02/video-play-icon.png" class="videos" onclick="video('2');">
+            </div>
+            <div id="v3">
+                <img src="https://ucontinental.edu.pe/impactopositivo/wp-content/uploads/2018/02/video-play-icon.png" class="videos" onclick="video('3');">
+            </div>
+        </footer>
+    </body>
+ </html>

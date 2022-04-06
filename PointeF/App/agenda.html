@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agenda.css">
+    <script src="menu.js"></script>
+    <style>
+        
+        
+    </style>
+    <title>Agenda</title>
+    
+    <script>
+        function tablaAm(){
+            let boton = document.getElementById("bottons");
+            boton.style.display = "none";
+            let tabla = document.getElementById("table1");
+            tabla.style.display = "";
+            let close= document.getElementById("close");
+            close.style.display = "";
+        }
+        function tablaPm(){
+            let boton = document.getElementById("bottons");
+            boton.style.display = "none";
+            let tabla = document.getElementById("table2");
+            tabla.style.display = "";
+            let close= document.getElementById("close");
+            close.style.display = "";
+        }
+        function cerrar(){
+            let bot = document.getElementById("bottons");
+            bot.style.display = "inline-block";
+            let tabla1= document.getElementById("table1");
+            tabla1.style.display = "none";
+            let tabla2 = document.getElementById("table2");
+            tabla2.style.display = "none";
+            let botonclose= document.getElementById("close");
+            botonclose.style.display = "none";date = new Date();
+           
+
+
+        }
+        function menu (){
+            let menu = document.getElementById("hola");
+            let boton1= document.getElementById("boton1");
+            let boton2 = document.getElementById("boton2");
+            menu.style.display=""; 
+            boton1.style.display="none";
+            boton2.style.display="";
+        }
+        function menucerrar(){
+            let boton2 = document.getElementById("boton2")
+            let boton1 = document.getElementById("boton1")
+            let menu = document.getElementById("hola");
+            boton2.style.display="none";
+            boton1.style.display="";
+            menu.style.display="none";
+        }
+        function obtainCookie(ck){
+                let id = '';
+                let cookies = document.cookie.split(";");
+                for (let i=0; i<cookies.length; i++){
+                    if (ck == cookies[i].split("=")[0])
+                        id=cookies[i].split("=")[1];
+                    }
+                    return id;
+            }
+
+        function login(){
+            let resPHP = new XMLHttpRequest();
+            let phpsend = new FormData();
+            let id= obtainCookie("IDDancer");
+            resPHP.open("POST", "schedules.php");
+            
+            resPHP.onreadystatechange = function(){
+                console.log(this.readyState);
+                console.log(resPHP);
+                if(this.readyState == 4){
+
+                    let data = JSON.parse(this.responseText);
+                    
+                }
+            }
+            resPHP.send(form1);
+
+        }
+        
+</script> 
+    
+</head>
+<body>
+    <button type="button" onclick="menu('')" id="boton1" style="display:block"><img src="Icons/Menu.png"> </button>
+    <button type="button" onclick="menucerrar('')" id="boton2" style="display:none"><img src="Icons/Menu.png"></button>
+    <div class="navbar" id="hola" style="display: none">
+        <table>
+        <tr><td id="menu1"> <a href="Daily_report.html" ><img src="Icons/Daily.png"><br>Daily report</a></td></tr>
+        <tr><td><a href="Recomendations.html"><img src="Icons/Recomendation.png"><br>Tips</a></td></tr>
+        <tr><td><a href="General_report.html"><img src="Icons/Report.png"><br>General report</a></td></tr>
+        <tr><td> <a href="agenda.html"><img src="Icons/Calendar.png"><br>Schedule</span></a></td></tr>
+        </table> 
+    </div>
+<header id="titulo">
+        <h1>Schedules</h1>
+
+        
+        <style type="text/css"> .mifecha {background-color:#000000;margin-left: 590px;margin-bottom: 30px; padding:3px; width:200px;height: 200px; text-align:center; font-family:verdana, arial; font-size:12pt; border-radius:5px;} .mifecha .ano{background-color:#302e2e7e; color:#ffe3c1;margin-top: 40px; padding:2px; font-size:100%; margin-bottom:3px; letter-spacing:2px; font-weight:bold;} .mifecha .dia{background-color:#1212137e; color:#fffefe; font-size:300%; padding:2px 8px 5px; margin-bottom:3px; font-weight:bold; text-shadow:1px 1px 1px #000;} .mifecha .mes{background-color:#302e2e7e; color:#ffe3c1; font-size:80%; padding:2px; font-weight:bold;} </style> <script type="text/javascript"> var f=new Date(); var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); document.write('<div class="mifecha">'); document.write('<div class="ano">' + f.getFullYear() + '</div>'); document.write('<div class="dia">' + f.getDate() + '</div>'); document.write('<div class="mes">' + meses[f.getMonth()] + '</div>'); document.write('</div>'); </script>
+     
+      
+       <div id="bottons" style="display: inline-block"><button id="am" style="display:inline-block" onclick="tablaAm('')">AM</button> <button id="pm" style="display:inline-block" onclick="tablaPm('')">PM</button >   </div> 
+        
+    </header>
+    <section>
+        <button id="close" style="display:none" onclick="cerrar()"><img src="Fondos/outline_close_black_24dp.png" alt=""></button>
+       <table style="display: none" id="table1">
+           <tr class="col1">
+               <td>Time</td>
+               <td>Mondey</td>
+               <td>Tusday</td>
+               <td>Wensday</td>
+               <td>Thursday</td>
+               <td>Friday</td>
+               <td>Suturday</td>
+               <td>Sunday</td>
+           </tr>
+           <tr class="col2">
+               <td>7:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col1">
+               <td>8:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col2">
+               <td>9:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col1">
+               <td>10:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col2">   
+               <td>11:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col1">
+               <td>12:00</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+           <tr class="col2">
+                <td>1:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+         <tr class="col1">
+                <td>2:00</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+       </table>
+
+       <table style="display: none" id="table2" >
+        <tr class="col1">
+            <td>Time</td>
+            <td>Mondey</td>
+            <td>Tusday</td>
+            <td>Wensday</td>
+            <td>Thursday</td>
+            <td>Friday</td>
+            <td>Suturday</td>
+            <td>Sunday</td>
+        </tr>
+        
+        <tr class="col2">
+            <td>3:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col1">
+            <td>4:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col2">
+            <td>5:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col1">
+            <td>6:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col2">
+            <td>7:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col1">
+            <td>8:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col2">
+            <td>9:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col1">
+            <td>10:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="col2">
+            <td>11:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+       
+    </table>
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>

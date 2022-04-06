@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Daily Report</title>
+        <script src="menu.js"></script>
+        <style>
+            body{
+                background-image: url('https://static.boredpanda.com/blog/wp-content/uploads/2016/09/ballet-dancers-the-art-of-movement-nyc-dance-project-ken-browar-deborah-ory-63-57ee11737f1fa__700.jpg');
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <button type="button" onclick="menu('')" id="boton1" style="display:block"><img src="Icons/Menu.png"> </button>
+        <button type="button" onclick="menucerrar('')" id="boton2" style="display:none"><img src="Icons/Menu.png"></button>
+        <div class="navbar" id="hola" style="display: none">
+            <table>
+            <tr><td> <a href="Daily_report.html"><img src="Icons/Daily.png"><br>Daily report</a></td></tr>
+            <tr><td><a href="Recomendations.html"><img src="Icons/Recomendation.png"><br>Tips</a></td></tr>
+            <tr><td><a href="General_report.html"><img src="Icons/Report.png"><br>General report</a></td></tr>
+            <tr><td> <a href="agenda.html"><img src="Icons/Calendar.png"><br>Schedule</span></a></td></tr>
+            </table> 
+        </div>
+        <header>
+            <h2>General Report</h2>
+        </header>
+        <section> 
+         <input type="hidden" id="hi" value = '35'>
+                <div class="percentages" id="High_Impact"></div>
+                <p>High impact</p>
+                <br>
+                <div class="percentages" id="Turns"></div>
+                <p>Turns</p>
+                <br>
+                <div class="percentages" id="Brush"></div>
+                <p>Brush</p>
+                <br>
+                <div class="percentages" id="Balance"></div>
+                <p>Balance</p>
+                <br>
+                <div class="percentages" id="Legs_Height"></div>
+                <p>Legs Height</p>
+                <br>
+                
+                <h3>Warnings</h3>
+                <p class="description" style="color:white" id="desc">
+                    </p>  
+
+                <script>
+
+            function fnPercent(percent, id){
+                str = '<div style="width: '+percent+'%;background: white; height: 20px;"></div>';
+                let barra = document.getElementById(id);
+                barra.innerHTML = str;
+            }
+
+            function obtainCookie(ck){
+                let id = '';
+                let cookies = document.cookie.split(";");
+                for (let i=0; i<cookies.length; i++){
+                    if (ck == cookies[i].split("=")[0])
+                        id=cookies[i].split("=")[1];
+                    }
+                    return id;
+            }
+
+            function barra(column){
+                id=obtainCookie("IDDancer");
+                let resPHP = new XMLHttpRequest();
+                let form1 = new FormData();
+                form1.append("id",""+id+"");
+                form1.append("column",""+column+"");
+                resPHP.open("POST", "General_report.php");
+                
+                resPHP.onreadystatechange = function(){
+                    if(this.readyState == 4){
+                        let data = JSON.parse(this.responseText);
+                        fnPercent(data[0].High_Impact,'High_Impact');
+                        fnPercent(data[0].Turns,'Turns');
+                        fnPercent(data[0].Brush,'Brush');
+                        fnPercent(data[0].Balance,'Balance');
+                        fnPercent(data[0].Legs_Height,'Legs_Height');
+                    }
+                }
+                resPHP.send(form1);
+
+            }
+
+            function warning(){
+                id=obtainCookie("IDDancer")
+                let resPHP = new XMLHttpRequest();
+                let form1 = new FormData();
+                form1.append("id",""+id+"");
+                resPHP.open("POST", "General_report.php");
+                
+                resPHP.onreadystatechange = function(){
+                    if(this.readyState == 4){
+                        let data = JSON.parse(this.responseText);
+                        prints(data[0].Description)
+                    }
+                }
+                resPHP.send(form1);
+            }
+            
+            function prints(str){
+                let warnings = document.getElementById("desc");
+                warnings.innerHTML = str;
+            }
+        </script>
+
+        </section>
+        <footer>
+
+        </footer>
+        
+       
+<script>
+
+</script>
+<script>
+    barra('High_Impact');
+    barra('Turns');
+    barra('Brush');
+    barra('Balance');
+    barra('Legs_Height');
+   warning();
+
+</script> 
+    </body>
+</html>
