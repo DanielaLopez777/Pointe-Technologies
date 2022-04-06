@@ -6,63 +6,103 @@
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script>
-    function fnPercent(percent, id){
-        str = '<div style="width: '+percent+'%;background: white; height: 20px;"></div>';
+    function fnPercent(percent, id) {
+        str = '<div style="width: ' + percent + '%;background: white; height: 20px;"></div>';
         let barra = document.getElementById(id);
         barra.innerHTML = str;
     }
 
-    function obtainCookie1(ck){
+    function obtainCookie1(ck) {
         let id = '';
         let cookies = document.cookie.split(";");
-        for (let i=0; i<cookies.length; i++){
+        for (let i = 0; i < cookies.length; i++) {
             if (ck == cookies[i].split("=")[0])
-                id=cookies[i].split("=")[1];
-                
-            }
-            return id;
-    
-           
+                id = cookies[i].split("=")[1];
+
+        }
+        return id;
+
+
     }
 
-   
-
- 
-
-   
-    function asist(){
+    function asist() {
         let resPHP = new XMLHttpRequest();
         let form1 = new FormData();
-        
 
-        let cookie1=document.cookie.split(";")[1];
-        let grade=cookie1.split("=")[1];
-        form1.append("grade",""+grade+"");
-        
 
-        let cookie2=document.cookie.split(";")[2];
-        let group=cookie2.split("=")[1];
-        form1.append("group",""+group+"");
+        let cookie1 = document.cookie.split(";")[1];
+        let grade = cookie1.split("=")[1];
+        form1.append("grade", "" + grade + "");
 
-        let cookie3=document.cookie.split(";")[0];
-        let idp=cookie3.split("=")[1];
-        form1.append("id",""+idp+"");
-     
+
+        let cookie2 = document.cookie.split(";")[2];
+        let group = cookie2.split("=")[1];
+        form1.append("group", "" + group + "");
+
+        let cookie3 = document.cookie.split(";")[0];
+        let idp = cookie3.split("=")[1];
+        form1.append("id", "" + idp + "");
+
         resPHP.open("POST", "asistence.php");
 
         resPHP.send(form1);
-        
-        resPHP.onreadystatechange = function(){
-            if(this.readyState == 4){
+
+        resPHP.onreadystatechange = function () {
+            if (this.readyState == 4) {
                 console.log(this.responseText);
                 let data = JSON.parse(this.responseText);
             }
         }
-       
+
 
     }
 
-    
+    function appendRow(app) {
+        var obj = [{
+                "Nombre": "Yamil",
+                "Descripcion": "Baja Temporal",
+            },
+            {
+                "Nombre": "Pedro",
+                "Descripcion": "No asistio",
+            },
+            {
+                "Nombre": "Francisca",
+                "Descripcion": "Asistio",
+            },
+            {
+                "Nombre": "Luciana",
+                "Descripcion": "No asistio",
+            }
+        ];
+        var col = [];
+        for (var i = 0; i < obj.length; i++) {
+            for (var key in obj[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+        var table = document.createElement("table");
+        var tr = table.insertRow(-1);
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th"); // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+        for (var i = 0; i < obj.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = obj[i][col[j]];
+            }
+        }
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
 </script>
 
 <link rel="icon" href="img/icon.png">
@@ -81,16 +121,11 @@
     </video>
 </head>
 
-<body>
+<body onload="appendRow();">
     <div id="login-box">
         <h1>Assistance</h1>
         <div class="item">
-            <table class="styled-table" id="AssistTable">
-                <th>Name</th>
-                <th>Asistance</th>
-
-            </table>
-            <button onclick="asist()" ></button>
+            <p id="showData"></p>
         </div>
     </div>
 
