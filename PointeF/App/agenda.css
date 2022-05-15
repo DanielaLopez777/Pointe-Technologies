@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+body{    
+    text-align: center;
+    background-image: url('https://c0.wallpaperflare.com/preview/996/454/544/person-in-ballet-shoes.jpg');
+    color: black;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+}
+#am{
+    width: 200px;
+    height: 50px;
+    background-color: rgba(240, 248, 255, 0.411);
+    font-size: 25px;
+    font-weight:normal;
+}
+#pm{
+    width: 200px;
+    height: 50px;
+    margin-left: 50px;
+    background-color: rgba(240, 248, 255, 0.411);
+    font-size: 25px;
+    font-weight:normal;
+}
+#add{
+    width: 200px;
+    height: 50px;
+    margin-left: 50px;
+    background-color: rgba(240, 248, 255, 0.411);
+    font-size: 25px;
+    font-weight:normal;
+}
+#op{
+    width: 100px;
+    height: 50px;
+    margin-left: 50px;
+    background-color: rgba(240, 248, 255, 0.411);
+    
+    font-weight:normal;
+
+}
+body h1{
+    font-size:100px;
+    font-family: 'Mea Culpa';
+    font-weight:normal;
+    
+}
+ body section table tr td {
+     border:solid white 2px;
+     width: 150px;height: 50px;
+     text-align:center;
+     
+ }
+ body section table {
+     margin-left: 50px;
+     margin-top: 20px;;
+
+ }
+ .col1 td {
+     background-color: rgba(240, 248, 255, 0.411);
+ }
+ .col2 td{
+     background-color:rgba(44, 42, 42, 0.541);
+
+ }
+
+ #close{
+     margin-left:1000px;
+ }
+ body h2{
+     margin-bottom:60px;
+     font-size:45px;
+     background-color: rgba(0, 0, 0, 0.411);
+     width:200px;
+     color: white;
+     margin-left: 500px;
+
+ }
+
+
+ /* Side menu */
+ #boton1{
+    margin-right: 2000px;
+    background-color: rgba(85, 83, 83, 0.911);
+ }
+ #boton2{
+    margin-right: 2000px;
+    background-color: rgba(85, 83, 83, 0.911);
+
+ }
+ #menu1 a{
+     margin-top: 200px;
+ }
+.navbar {
+    width: 100px;
+    height:800px;
+    background-color: rgba(85, 85, 85, 0.425);
+    overflow: auto;
+    float: left;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    width: 95px;
+    margin-top: 20px;
+    
+    
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  /* Current/active navbar link */
+  .active {
+    background-color: #0000005b;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+
+ 
+  
+
+
+
+

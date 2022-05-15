@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+body {
+    background-image: url('https://i.ytimg.com/vi/FQ0t8VTLjVI/maxresdefault.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+#login-box {
+    border: 1px solid rgba(61, 59, 59, 0.671);
+    width: 30%;
+    text-align: center;
+    margin: auto;
+    margin-top: 8%;
+    background: rgba(61, 59, 59, 0.651);
+    padding: 20px 50px;
+    position: relative;
+}
+#login-box h1 {
+    color: white;
+    font-family: 'Mea Culpa';
+    font-size: 70px;
+    padding-bottom: 18px;
+}
+
+#login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+
+#login-box .form .item input {
+    width: 200px;
+    border: 0;
+    border-bottom: 5px solid black;
+    font-size: 18px;
+    background: #ffffff00;
+    color: white;
+    padding: 5px 10px;
+}
+
+#login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+
+#login-box button {
+    border: 0; 
+    width: 150px; 
+    height: 30px;
+    margin-top: 18px; 
+    font-size: 18px; 
+    color: white;
+    border-radius: 25px; 
+    background-color: rgba(0, 0, 0, 0.288); 
+}
+
+.tipo p {
+    color: white;
+    padding-top: 10px;
+
+}
+
+label {
+    color: white;
+    font-family: 'Mea Culpa';
+    font-size: 50px;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+option, select {
+    background-color: rgba(0, 0, 0, 0.568);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    border-radius: 60px;
+}
+
+.item {
+    text-align: center;
+    border: 1px;
+    position: relative;
+    color: rgb(202, 202, 202);
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 25px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 269.69px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    color: gray !important;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ffffff;
+}

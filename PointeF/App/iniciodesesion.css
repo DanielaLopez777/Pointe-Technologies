@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+body{
+    background-image: url('Fondos/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+#login-box {
+    border: 1px solid rgba(61, 59, 59, 0.521);
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15%;
+    background: rgba(61, 59, 59, 0.521);
+    padding: 20px 50px;
+}
+#login-box h1 {
+    color: white;
+    font-family: 'Mea Culpa';
+    padding-bottom: 18px;
+}
+#login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+#login-box .form .item input {
+    width: 200px; 
+    border: 0; 
+    border-bottom: 5px solid black; 
+    font-size: 18px; 
+    background: #ffffff00; 
+    color: white; 
+    padding: 5px 10px; 
+}
+#login-box .form .item i {
+    color: white;
+    font-size: 18px;
+}
+#login-box button {
+    border: 0; 
+    width: 150px; 
+    height: 30px;
+    margin-top: 18px; 
+    font-size: 18px; 
+    color: white;
+    border-radius: 25px; 
+    background-color: rgba(0, 0, 0, 0.288); 
+}
+.tipo p  {
+    color: white ;
+    padding-top: 10px;
+    
+}
+
